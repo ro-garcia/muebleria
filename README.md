@@ -59,12 +59,15 @@ npm run dev
 ---
 
 ## Preview
-## Preview
 
 ### Página principal
-![Página principal](./screenshot_1.png)
+<p align="center">
+  <img src="./screenshot_1.png" width="600"/>
+</p>
 
 ### Vista de productos
-![Vista de productos](./screenshot_2.png)
+<p align="center">
+  <img src="./screenshot_2.png" width="600"/>
+</p>
 
 ---
