@@ -61,9 +61,9 @@ npm run dev
 ## Preview
 
 Página principal
-./public/screenshot_1.png
+./screenshot_1.png
 
 Vista de productos
-./public/screenshot_2.png
+./screenshot_2.png
 
 ---
