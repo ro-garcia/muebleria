@@ -59,11 +59,12 @@ npm run dev
 ---
 
 ## Preview
+## Preview
 
-Página principal
-./screenshot_1.png
+### Página principal
+![Página principal](./screenshot_1.png)
 
-Vista de productos
-./screenshot_2.png
+### Vista de productos
+![Vista de productos](./screenshot_2.png)
 
 ---
