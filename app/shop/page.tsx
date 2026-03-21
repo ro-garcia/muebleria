@@ -2,49 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { Menu, X, ShoppingCart } from "lucide-react";
 import { Truck, CreditCard, ShieldCheck } from "lucide-react";
 
 export default function Home() {
-  const [open, setOpen] = useState(false);
-
   return (
     <main className="bg-white text-black">
 
-      {/* NAVBAR */}
-      <header className="fixed top-0 left-0 w-full bg-white z-50 border-b">
-        <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-          <h1 className="text-xl font-bold tracking-wide">LOS ALPES</h1>
-
-          <nav className="hidden md:flex gap-8 text-sm font-medium">
-            <Link href="/shop">Inicio</Link>
-            <Link href="/shop/tienda">Tienda</Link>
-            <Link href="/shop/categorias">Categorías</Link>
-            <Link href="/shop/contacto">Contacto</Link>
-          </nav>
-
-          <div className="flex items-center gap-4">
-            <ShoppingCart className="w-5 h-5" />
-
-            <button className="md:hidden" onClick={() => setOpen(!open)}>
-              {open ? <X /> : <Menu />}
-            </button>
-          </div>
-        </div>
-
-        {open && (
-          <div className="md:hidden flex flex-col items-center py-4 gap-4 border-t">
-            <Link href="/shop">Inicio</Link>
-            <Link href="/shop/tienda">Tienda</Link>
-            <Link href="/shop/categorias">Categorías</Link>
-            <Link href="/shop/contacto">Contacto</Link>
-          </div>
-        )}
-      </header>
-
       {/* HERO */}
-      <section className="relative w-full h-[90vh] mt-[70px]">
+      <section className="relative w-full h-[90vh]">
         <Image
           unoptimized
           src="https://images.unsplash.com/photo-1567016432779-094069958ea5"
@@ -64,7 +29,7 @@ export default function Home() {
           </p>
 
           <Link
-            href="/tienda"
+            href="/shop/tienda"
             className="mt-6 w-fit bg-white text-black px-6 py-3 text-sm font-semibold hover:bg-gray-200 transition"
           >
             VER COLECCIÓN
@@ -72,45 +37,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BENEFICIOS PRO */}
+      {/* BENEFICIOS */}
       <section className="py-16 px-6 md:px-10 border-b">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
 
-    {/* ITEM */}
-    <div className="flex flex-col items-center">
-      <div className="w-12 h-12 flex items-center justify-center border border-black rounded-full mb-4">
-        <Truck className="w-5 h-5" />
-      </div>
-      <p className="font-semibold">Envíos a todo el país</p>
-      <p className="text-sm text-gray-500 mt-1">
-        Entrega rápida y segura
-      </p>
-    </div>
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 flex items-center justify-center border border-black rounded-full mb-4">
+              <Truck className="w-5 h-5" />
+            </div>
+            <p className="font-semibold">Envíos a todo el país</p>
+            <p className="text-sm text-gray-500 mt-1">
+              Entrega rápida y segura
+            </p>
+          </div>
 
-    {/* ITEM */}
-    <div className="flex flex-col items-center">
-      <div className="w-12 h-12 flex items-center justify-center border border-black rounded-full mb-4">
-        <CreditCard className="w-5 h-5" />
-      </div>
-      <p className="font-semibold">Pagos seguros</p>
-      <p className="text-sm text-gray-500 mt-1">
-        Tarjetas y transferencia
-      </p>
-    </div>
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 flex items-center justify-center border border-black rounded-full mb-4">
+              <CreditCard className="w-5 h-5" />
+            </div>
+            <p className="font-semibold">Pagos seguros</p>
+            <p className="text-sm text-gray-500 mt-1">
+              Tarjetas y transferencia
+            </p>
+          </div>
 
-    {/* ITEM */}
-    <div className="flex flex-col items-center">
-      <div className="w-12 h-12 flex items-center justify-center border border-black rounded-full mb-4">
-        <ShieldCheck className="w-5 h-5" />
-      </div>
-      <p className="font-semibold">Garantía de calidad</p>
-      <p className="text-sm text-gray-500 mt-1">
-        Materiales premium
-      </p>
-    </div>
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 flex items-center justify-center border border-black rounded-full mb-4">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <p className="font-semibold">Garantía de calidad</p>
+            <p className="text-sm text-gray-500 mt-1">
+              Materiales premium
+            </p>
+          </div>
 
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* CATEGORÍAS */}
       <section className="py-14 px-6 md:px-10">
@@ -195,49 +157,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
-      {/* FOOTER */}
-      <footer className="bg-black text-white mt-16">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
-
-          <div>
-            <h2 className="text-xl font-bold mb-4">LOS ALPES</h2>
-            <p className="text-sm text-gray-400">
-              Muebles modernos para transformar tu hogar con estilo.
-            </p>
-          </div>
-
-          <div>
-            <p className="font-semibold mb-4">Tienda</p>
-            <ul className="text-sm text-gray-400 space-y-2">
-              <li><Link href="/tienda">Productos</Link></li>
-              <li><Link href="/categorias">Categorías</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="font-semibold mb-4">Ayuda</p>
-            <ul className="text-sm text-gray-400 space-y-2">
-              <li><Link href="/contacto">Contacto</Link></li>
-              <li><Link href="#">Envíos</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="font-semibold mb-4">Contacto</p>
-            <p className="text-sm text-gray-400">
-              Guatemala<br />
-              info@losalpes.com<br />
-              +502 1234-5678
-            </p>
-          </div>
-
-        </div>
-
-        <div className="border-t border-gray-800 text-center text-sm text-gray-500 py-4">
-          © {new Date().getFullYear()} Los Alpes
-        </div>
-      </footer>
 
     </main>
   );

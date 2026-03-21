@@ -1,49 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { Menu, X, ShoppingCart, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Contacto() {
-  const [open, setOpen] = useState(false);
-
   return (
     <main className="bg-white text-black">
 
-      {/* NAVBAR */}
-      <header className="fixed top-0 left-0 w-full bg-white z-50 border-b">
-        <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-          <h1 className="text-xl font-bold tracking-wide">LOS ALPES</h1>
-
-          <nav className="hidden md:flex gap-8 text-sm font-medium">
-            <Link href="/shop">Inicio</Link>
-            <Link href="/shop/tienda">Tienda</Link>
-            <Link href="/shop/categorias">Categorías</Link>
-            <Link href="/shop/contacto">Contacto</Link>
-          </nav>
-
-          <div className="flex items-center gap-4">
-            <ShoppingCart className="w-5 h-5" />
-
-            <button className="md:hidden" onClick={() => setOpen(!open)}>
-              {open ? <X /> : <Menu />}
-            </button>
-          </div>
-        </div>
-
-        {open && (
-          <div className="md:hidden flex flex-col items-center py-4 gap-4 border-t">
-            <Link href="/shop" onClick={() => setOpen(false)}>Inicio</Link>
-            <Link href="/shop/tienda" onClick={() => setOpen(false)}>Tienda</Link>
-            <Link href="/shop/categorias" onClick={() => setOpen(false)}>Categorías</Link>
-            <Link href="/shop/contacto" onClick={() => setOpen(false)}>Contacto</Link>
-          </div>
-        )}
-      </header>
-
       {/* HERO */}
-      <section className="relative h-[300px] w-full mt-[70px]">
+      <section className="relative h-[300px] w-full">
         <Image
           unoptimized
           src="https://images.unsplash.com/photo-1493666438817-866a91353ca9"
