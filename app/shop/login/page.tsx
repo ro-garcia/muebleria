@@ -8,12 +8,12 @@ export default function Login() {
   const router = useRouter();
 
   const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault(); // evita refresh
-    router.push("/shop/cuenta"); // redirección directa
+    e.preventDefault();
+    router.push("/shop/cuenta");
   };
 
   return (
-    <main className="relative min-h-screen flex items-center justify-center">
+    <main className="relative min-h-screen flex items-center justify-center text-black">
 
       {/* BACKGROUND */}
       <Image
@@ -24,13 +24,13 @@ export default function Login() {
         className="object-cover"
       />
 
-      {/* OVERLAY */}
-      <div className="absolute inset-0 bg-black/60" />
+      {/* OVERLAY (más suave) */}
+      <div className="absolute inset-0 bg-black/40" />
 
       {/* CARD */}
-      <div className="relative z-10 bg-white w-full max-w-md p-10 rounded-xl shadow-xl">
+      <div className="relative z-10 bg-white w-full max-w-md p-10 rounded-xl shadow-2xl text-black">
 
-        <h1 className="text-2xl font-bold mb-6 text-center">
+        <h1 className="text-2xl font-bold mb-6 text-center text-black">
           Iniciar sesión
         </h1>
 
@@ -38,27 +38,34 @@ export default function Login() {
 
           {/* USUARIO */}
           <div>
-            <label className="text-sm font-medium">Usuario</label>
+            <label className="text-sm font-medium text-black">
+              Usuario
+            </label>
             <input
               type="text"
               placeholder="Ingresa tu usuario"
-              className="w-full border mt-2 p-3 focus:outline-none focus:border-black"
+              className="w-full border border-gray-300 mt-2 p-3 text-black placeholder-gray-400 focus:outline-none focus:border-black"
             />
           </div>
 
           {/* CONTRASEÑA */}
           <div>
-            <label className="text-sm font-medium">Contraseña</label>
+            <label className="text-sm font-medium text-black">
+              Contraseña
+            </label>
             <input
               type="password"
               placeholder="Ingresa tu contraseña"
-              className="w-full border mt-2 p-3 focus:outline-none focus:border-black"
+              className="w-full border border-gray-300 mt-2 p-3 text-black placeholder-gray-400 focus:outline-none focus:border-black"
             />
           </div>
 
           {/* OLVIDÉ CONTRASEÑA */}
           <div className="text-right">
-            <Link href="#" className="text-sm text-gray-500 hover:text-black">
+            <Link
+              href="#"
+              className="text-sm text-gray-700 hover:text-black transition"
+            >
               ¿Olvidaste tu contraseña?
             </Link>
           </div>
@@ -74,9 +81,12 @@ export default function Login() {
         </form>
 
         {/* CREAR CUENTA */}
-        <div className="text-center mt-6 text-sm text-gray-800">
+        <div className="text-center mt-6 text-sm text-gray-700">
           ¿No tienes cuenta?{" "}
-          <Link href="#" className="text-black font-medium">
+          <Link
+            href="#"
+            className="text-black font-semibold hover:underline"
+          >
             Crear cuenta
           </Link>
         </div>
